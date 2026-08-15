@@ -1,0 +1,164 @@
+/*
+Theme Name: Élan Wellness Spa
+Theme URI: https://elanwellnessspa.co.za
+Author: Raees Jaffar
+Author URI: https://elanwellnessspa.co.za
+Description: A custom WordPress theme developed exclusively for Élan Wellness Spa. Built with a luxury responsive design using Tailwind CSS and native WordPress functionality.
+Version: 1.0.0
+Requires at least: 6.5
+Tested up to: 6.8
+Requires PHP: 8.1
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: elan-wellness-spa
+Tags: custom-theme, responsive, spa, wellness, tailwind, modern, accessibility-ready
+*/
+
+
+/* ======================================================
+   ÉLAN WELLNESS SPA
+   WordPress Theme Stylesheet
+
+   Main styling is handled by:
+   assets/css/output.css
+
+   Tailwind CSS is loaded through:
+   functions.php
+
+====================================================== */
+
+
+/* ======================================================
+   WORDPRESS CORE IMAGE ALIGNMENT
+====================================================== */
+
+.alignleft {
+    float: left;
+    margin-right: 1.5rem;
+}
+
+.alignright {
+    float: right;
+    margin-left: 1.5rem;
+}
+
+.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* ======================================================
+   WORDPRESS MEDIA RESPONSIVENESS
+====================================================== */
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* ======================================================
+   ACCESSIBILITY
+====================================================== */
+
+.screen-reader-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+
+/* ======================================================
+   CUSTOM THEME OVERRIDES
+====================================================== */
+
+/*
+   Add small WordPress-specific CSS adjustments here.
+
+   Do not place Tailwind styling here.
+/*
+
+
+/* ==========================================================
+   ÉLAN WELLNESS SPA
+   Amelia Booking Form Styling
+========================================================== */
+
+/* Main Booking Container */
+.amelia-v2-booking,
+.amelia-step-booking{
+    background:#ffffff;
+    border-radius:18px;
+    box-shadow:0 12px 35px rgba(0,0,0,.08);
+    font-family:"Poppins",sans-serif;
+}
+
+/* Headings */
+.amelia-v2-booking h2,
+.amelia-v2-booking h3,
+.amelia-v2-booking h4{
+    font-family:"Cormorant Garamond",serif;
+    color:#2E2E2E;
+}
+
+/* Labels */
+.amelia-v2-booking label{
+    color:#4A4A4A;
+    font-weight:600;
+}
+
+
+/* Continue / Next Buttons */
+.amelia-v2-booking button,
+.amelia-v2-booking .am-button{
+
+    background:#C8A35F !important;
+    color:#ffffff !important;
+    border:none;
+    transition:.3s ease;
+
+}
+
+/* Hover */
+.amelia-v2-booking button:hover,
+.amelia-v2-booking .am-button:hover{
+
+    background:#B89453 !important;
+
+/* ==========================================================
+   Amelia 2.4.5 - Remove gold background from phone selector
+========================================================== */
+
+/* Country picker container */
+.amelia-v2-booking .am-input-phone .el-input-group__prepend,
+.amelia-step-booking .am-input-phone .el-input-group__prepend{
+    background:#ffffff !important;
+    border-right:1px solid #e5e5e5 !important;
+}
+
+/* Country picker button */
+.amelia-v2-booking .am-input-phone .el-input-group__prepend button,
+.amelia-step-booking .am-input-phone .el-input-group__prepend button{
+    background:#ffffff !important;
+    box-shadow:none !important;
+}
+
+/* Arrow */
+.amelia-v2-booking .am-input-phone .el-select__caret,
+.amelia-step-booking .am-input-phone .el-select__caret{
+    color:#4A4A4A !important;
+}
+
+/* Remove any gold pseudo-elements */
+.amelia-v2-booking .am-input-phone .el-input-group__prepend::before,
+.amelia-v2-booking .am-input-phone .el-input-group__prepend::after,
+.amelia-step-booking .am-input-phone .el-input-group__prepend::before,
+.amelia-step-booking .am-input-phone .el-input-group__prepend::after{
+    background:transparent !important;
+}
+  
+}
