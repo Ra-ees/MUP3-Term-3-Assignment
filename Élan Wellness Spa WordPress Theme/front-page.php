@@ -22,7 +22,8 @@ get_header();
     <div class="absolute inset-0 bg-black/40"></div>
 
     <!-- Hero Content -->
-    <div class="relative z-10 max-w-7xl mx-auto px-8 w-full pt-48 md:pt-0">
+    <div class="relative z-10 max-w-7xl mx-auto px-8 w-full pt-48 md:pt-0"
+         style="transform: translateY(-55px);">
 
         <div class="max-w-2xl">
 
