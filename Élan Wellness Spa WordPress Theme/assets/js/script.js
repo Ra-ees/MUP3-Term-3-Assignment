@@ -1,60 +1,79 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* ============================
-       MOBILE MENU
-    ============================ */
+/* ============================
+   MOBILE MENU
+============================ */
 
-    const menuButton =
-        document.getElementById("mobile-menu-button");
+const menuButton =
+    document.getElementById("mobile-menu-button");
 
-    const mobileMenu =
-        document.getElementById("mobile-menu");
+const mobileMenu =
+    document.getElementById("mobile-menu");
 
-    const menuIcon =
-        document.getElementById("mobile-menu-icon");
-
-
-    if (menuButton && mobileMenu && menuIcon) {
-
-        let menuOpen = false;
+const menuIcon =
+    document.getElementById("mobile-menu-icon");
 
 
-        menuButton.addEventListener("click", () => {
+if (menuButton && mobileMenu && menuIcon) {
 
-            menuOpen = !menuOpen;
-
-
-            /* ============================
-               OPEN MENU
-            ============================ */
-
-            if (menuOpen) {
-
-                mobileMenu.style.display = "block";
-
-                menuButton.setAttribute(
-                    "aria-expanded",
-                    "true"
-                );
-
-                menuButton.setAttribute(
-                    "aria-label",
-                    "Close navigation menu"
-                );
+    let menuOpen = false;
 
 
-                /* Change bars to X */
+    menuButton.addEventListener("click", () => {
 
-                menuIcon.classList.remove(
-                    "fa-bars"
-                );
-
-                menuIcon.classList.add(
-                    "fa-xmark"
-                );
+        menuOpen = !menuOpen;
 
 
-                /* Animate menu */
+        /* ============================
+           OPEN MENU
+        ============================ */
+
+        if (menuOpen) {
+
+            /*
+             * Make menu available first,
+             * but keep it in its closed state.
+             */
+
+            mobileMenu.style.display = "block";
+
+            mobileMenu.style.opacity = "0";
+
+            mobileMenu.style.transform =
+                "translateY(-18px)";
+
+            mobileMenu.style.maxHeight = "0";
+
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                "true"
+            );
+
+            menuButton.setAttribute(
+                "aria-label",
+                "Close navigation menu"
+            );
+
+
+            /* Change hamburger to X */
+
+            menuIcon.classList.remove(
+                "fa-bars"
+            );
+
+            menuIcon.classList.add(
+                "fa-xmark"
+            );
+
+
+            /*
+             * Animate menu open.
+             * Two animation frames allow the browser
+             * to register the closed state first.
+             */
+
+            requestAnimationFrame(() => {
 
                 requestAnimationFrame(() => {
 
@@ -63,30 +82,96 @@ document.addEventListener("DOMContentLoaded", () => {
                     mobileMenu.style.transform =
                         "translateY(0)";
 
+                    mobileMenu.style.maxHeight =
+                        "600px";
+
                 });
 
+            });
 
-            }
+        }
 
 
-            /* ============================
-               CLOSE MENU
-            ============================ */
+        /* ============================
+           CLOSE MENU
+        ============================ */
 
-            else {
+        else {
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            menuButton.setAttribute(
+                "aria-label",
+                "Open navigation menu"
+            );
+
+
+            /* Change X back to hamburger */
+
+            menuIcon.classList.remove(
+                "fa-xmark"
+            );
+
+            menuIcon.classList.add(
+                "fa-bars"
+            );
+
+
+            /*
+             * Smoothly reverse the
+             * opening animation.
+             */
+
+            mobileMenu.style.opacity = "0";
+
+            mobileMenu.style.transform =
+                "translateY(-18px)";
+
+            mobileMenu.style.maxHeight =
+                "0";
+
+
+            /*
+             * Wait until the 0.45 second
+             * animation has finished before
+             * completely hiding the menu.
+             */
+
+            setTimeout(() => {
+
+                if (!menuOpen) {
+
+                    mobileMenu.style.display =
+                        "none";
+
+                }
+
+            }, 450);
+
+        }
+
+    });
+
+
+    /* ============================
+       CLOSE MENU AFTER LINK CLICK
+    ============================ */
+
+    mobileMenu
+        .querySelectorAll("a")
+        .forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                menuOpen = false;
 
                 menuButton.setAttribute(
                     "aria-expanded",
                     "false"
                 );
-
-                menuButton.setAttribute(
-                    "aria-label",
-                    "Open navigation menu"
-                );
-
-
-                /* Change X back to bars */
 
                 menuIcon.classList.remove(
                     "fa-xmark"
@@ -96,61 +181,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     "fa-bars"
                 );
 
-
-                /* Animate menu closed */
-
-                mobileMenu.style.opacity = "0";
-
-                mobileMenu.style.transform =
-                    "translateY(-12px)";
-
-
-                setTimeout(() => {
-
-                    if (!menuOpen) {
-
-                        mobileMenu.style.display =
-                            "none";
-
-                    }
-
-                }, 300);
-
-            }
+            });
 
         });
 
-
-        /* ============================
-           CLOSE MENU AFTER LINK CLICK
-        ============================ */
-
-        mobileMenu
-            .querySelectorAll("a")
-            .forEach(link => {
-
-                link.addEventListener("click", () => {
-
-                    menuOpen = false;
-
-                    menuButton.setAttribute(
-                        "aria-expanded",
-                        "false"
-                    );
-
-                    menuIcon.classList.remove(
-                        "fa-xmark"
-                    );
-
-                    menuIcon.classList.add(
-                        "fa-bars"
-                    );
-
-                });
-
-            });
-
-    }
+}
 
 
     /* ============================
