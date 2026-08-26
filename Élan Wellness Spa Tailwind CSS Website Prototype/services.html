@@ -31,57 +31,280 @@
 
 <body class="font-body bg-background text-text">
 
-<header class="absolute top-0 left-0 w-full z-50">
+<header
+    class="w-full z-50"
+    style="
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9999;
+        background-color: #556B5D;
+    ">
 
-        <nav class="max-w-7xl mx-auto flex items-center justify-between px-8 py-6">
+    <nav class="max-w-7xl mx-auto flex items-center justify-between px-8 py-5 transition-all duration-500">
 
-            <!-- Logo -->
+
+        <!-- ========================= -->
+        <!-- LOGO -->
+        <!-- ========================= -->
+
+        <a href="index.html"
+           class="font-heading text-3xl font-bold text-white">
+
+            Élan
+
+            <span class="text-secondary">
+                Wellness Spa
+            </span>
+
+        </a>
+
+
+        <!-- ========================= -->
+        <!-- DESKTOP NAVIGATION -->
+        <!-- ========================= -->
+
+        <ul class="hidden md:flex items-center gap-10 font-medium text-white">
+
+            <li>
+                <a href="index.html"
+                   class="relative text-white hover:text-secondary transition duration-300">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="about.html"
+                   class="relative text-white hover:text-secondary transition duration-300">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="services.html"
+                   class="relative text-secondary hover:text-secondary transition duration-300"
+                   style="font-weight: 600;">
+                    Services
+                </a>
+            </li>
+
+            <li>
+                <a href="booking.html"
+                   class="relative text-white hover:text-secondary transition duration-300">
+                    Booking
+                </a>
+            </li>
+
+            <li>
+                <a href="contact.html"
+                   class="relative text-white hover:text-secondary transition duration-300">
+                    Contact
+                </a>
+            </li>
+
+        </ul>
+
+
+        <!-- ========================= -->
+        <!-- DESKTOP BOOK BUTTON -->
+        <!-- ========================= -->
+
+        <a href="booking.html"
+           class="hidden md:inline-block bg-secondary text-white px-6 py-3 rounded-full shadow-soft hover:scale-105 transition-transform duration-300">
+
+            Book Now
+
+        </a>
+
+
+        <!-- ========================= -->
+        <!-- MOBILE HAMBURGER BUTTON -->
+        <!-- ========================= -->
+
+        <button
+            type="button"
+            class="md:hidden text-3xl text-white"
+            id="mobile-menu-button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            style="
+                position: relative;
+                z-index: 10001;
+                border: none;
+                background: transparent;
+                cursor: pointer;
+                padding: 4px;
+            ">
+
+            <i class="fa-solid fa-bars"
+               id="mobile-menu-icon"></i>
+
+        </button>
+
+    </nav>
+
+
+    <!-- ========================= -->
+    <!-- MOBILE NAVIGATION -->
+    <!-- ========================= -->
+
+    <div
+        id="mobile-menu"
+        class="md:hidden"
+        style="
+            display: none;
+            width: 100%;
+            background-color: #4B6053;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(-18px);
+            max-height: 0;
+            transition:
+                opacity 0.45s ease,
+                transform 0.45s ease,
+                max-height 0.45s ease;
+            box-shadow: 0 12px 25px rgba(0,0,0,0.18);
+            border-radius: 0 0 18px 18px;
+        ">
+
+        <div
+            style="
+                padding: 10px 30px 30px 30px;
+                text-align: left;
+            ">
+
+
+            <!-- HOME -->
 
             <a href="index.html"
-               class="font-heading text-3xl font-bold text-white">
+               class="mobile-nav-link"
+               style="
+                   display: block;
+                   padding: 15px 0;
+                   text-decoration: none;
+                   font-size: 17px;
+                   font-weight: 500;
+                   color: #FFFFFF;
+                   border-bottom: 1px solid rgba(255,255,255,0.14);
+                   transition: color 0.25s ease, padding-left 0.25s ease;
+               ">
 
-                Élan
-                <span class="text-secondary">Wellness Spa</span>
+                Home
 
             </a>
 
-            <!-- Desktop Navigation -->
 
-            <ul class="hidden md:flex items-center gap-10 font-medium text-white">
+            <!-- ABOUT -->
 
-                <li><a href="index.html" class="relative hover:text-secondary transition duration-300">Home</a></li>
+            <a href="about.html"
+               class="mobile-nav-link"
+               style="
+                   display: block;
+                   padding: 15px 0;
+                   text-decoration: none;
+                   font-size: 17px;
+                   font-weight: 500;
+                   color: #FFFFFF;
+                   border-bottom: 1px solid rgba(255,255,255,0.14);
+                   transition: color 0.25s ease, padding-left 0.25s ease;
+               ">
 
-                <li><a href="about.html" class="relative hover:text-secondary transition duration-300">About</a></li>
+                About
 
-                <li><a href="services.html" class="relative hover:text-secondary transition duration-300">Services</a></li>
+            </a>
 
-                <li><a href="booking.html" class="relative hover:text-secondary transition duration-300">Booking</a></li>
 
-                <li><a href="contact.html" class="relative hover:text-secondary transition duration-300">Contact</a></li>
+            <!-- SERVICES -->
 
-            </ul>
+            <a href="services.html"
+               class="mobile-nav-link"
+               style="
+                   display: block;
+                   padding: 15px 0;
+                   text-decoration: none;
+                   font-size: 17px;
+                   font-weight: 600;
+                   color: #C8A96A;
+                   border-bottom: 1px solid rgba(255,255,255,0.14);
+                   transition: color 0.25s ease, padding-left 0.25s ease;
+               ">
 
-            <!-- Book Button -->
+                Services
+
+            </a>
+
+
+            <!-- BOOKING -->
 
             <a href="booking.html"
-               class="hidden md:inline-block bg-secondary text-white px-6 py-3 rounded-full shadow-soft hover:scale-105 hover:bg-primary transition duration-300">
+               class="mobile-nav-link"
+               style="
+                   display: block;
+                   padding: 15px 0;
+                   text-decoration: none;
+                   font-size: 17px;
+                   font-weight: 500;
+                   color: #FFFFFF;
+                   border-bottom: 1px solid rgba(255,255,255,0.14);
+                   transition: color 0.25s ease, padding-left 0.25s ease;
+               ">
+
+                Booking
+
+            </a>
+
+
+            <!-- CONTACT -->
+
+            <a href="contact.html"
+               class="mobile-nav-link"
+               style="
+                   display: block;
+                   padding: 15px 0;
+                   text-decoration: none;
+                   font-size: 17px;
+                   font-weight: 500;
+                   color: #FFFFFF;
+                   border-bottom: 1px solid rgba(255,255,255,0.14);
+                   transition: color 0.25s ease, padding-left 0.25s ease;
+               ">
+
+                Contact
+
+            </a>
+
+
+            <!-- MOBILE BOOK NOW BUTTON -->
+
+            <a href="booking.html"
+               id="mobile-book-button"
+               style="
+                   display: inline-block;
+                   margin-top: 24px;
+                   padding: 12px 28px;
+                   background-color: #C8A96A;
+                   color: #FFFFFF;
+                   border-radius: 999px;
+                   text-decoration: none;
+                   font-size: 15px;
+                   box-shadow: 0 7px 18px rgba(0,0,0,0.15);
+                   transition:
+                       transform 0.25s ease,
+                       background-color 0.25s ease;
+               ">
 
                 Book Now
 
             </a>
 
-            <!-- Mobile Button -->
+        </div>
 
-            <button class="md:hidden text-3xl">
+    </div>
 
-                <i class="fa-solid fa-bars"></i>
-
-            </button>
-
-        </nav>
-
-    </header>
-
+</header>
+    
 <!-- ========================================= -->
 <!-- SERVICES HERO -->
 <!-- ========================================= -->
