@@ -22,4 +22,8 @@ Live WordPress website:
 - JavaScript
 - PHP
 - WordPress
+
+## WordPress Plugins
 - Amelia Booking Plugin
+- Yoast SEO
+- WPForms Lite
