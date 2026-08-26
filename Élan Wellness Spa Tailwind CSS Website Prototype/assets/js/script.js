@@ -1,135 +1,479 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* ============================
-       MOBILE MENU
-    ============================ */
+/* ============================
+   MOBILE MENU
+============================ */
 
-    const menuButton = document.querySelector("button.md\\:hidden");
-    const desktopMenu = document.querySelector("nav ul");
+const menuButton =
+    document.getElementById("mobile-menu-button");
 
-    if (menuButton && desktopMenu) {
+const mobileMenu =
+    document.getElementById("mobile-menu");
 
-        let mobileMenu = null;
+const menuIcon =
+    document.getElementById("mobile-menu-icon");
 
-        menuButton.addEventListener("click", () => {
 
-            if (!mobileMenu) {
+if (menuButton && mobileMenu && menuIcon) {
 
-                mobileMenu = desktopMenu.cloneNode(true);
+    let menuOpen = false;
 
-                mobileMenu.className =
-                    "absolute top-full left-0 w-full bg-white shadow-xl flex flex-col text-center py-6 gap-6 text-gray-700";
 
-                document.querySelector("nav").appendChild(mobileMenu);
+    menuButton.addEventListener("click", () => {
 
-            } else {
+        menuOpen = !menuOpen;
 
-                mobileMenu.remove();
-                mobileMenu = null;
 
-            }
+        /* ============================
+           OPEN MENU
+        ============================ */
 
-        });
+        if (menuOpen) {
 
-    }
+            /*
+             * Make menu available first,
+             * but keep it in its closed state.
+             */
 
-    /* ============================
-       ACTIVE NAVIGATION
-    ============================ */
+            mobileMenu.style.display = "block";
 
-    const currentPage = location.pathname.split("/").pop();
+            mobileMenu.style.opacity = "0";
 
-    document.querySelectorAll("nav a").forEach(link => {
+            mobileMenu.style.transform =
+                "translateY(-18px)";
 
-        const href = link.getAttribute("href");
+            mobileMenu.style.maxHeight = "0";
 
-        if (href === currentPage) {
 
-            link.classList.add("text-secondary");
-            link.style.fontWeight = "600";
+            menuButton.setAttribute(
+                "aria-expanded",
+                "true"
+            );
+
+            menuButton.setAttribute(
+                "aria-label",
+                "Close navigation menu"
+            );
+
+
+            /* Change hamburger to X */
+
+            menuIcon.classList.remove(
+                "fa-bars"
+            );
+
+            menuIcon.classList.add(
+                "fa-xmark"
+            );
+
+
+            /*
+             * Animate menu open.
+             * Two animation frames allow the browser
+             * to register the closed state first.
+             */
+
+            requestAnimationFrame(() => {
+
+                requestAnimationFrame(() => {
+
+                    mobileMenu.style.opacity = "1";
+
+                    mobileMenu.style.transform =
+                        "translateY(0)";
+
+                    mobileMenu.style.maxHeight =
+                        "600px";
+
+                });
+
+            });
+
+        }
+
+
+        /* ============================
+           CLOSE MENU
+        ============================ */
+
+        else {
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            menuButton.setAttribute(
+                "aria-label",
+                "Open navigation menu"
+            );
+
+
+            /* Change X back to hamburger */
+
+            menuIcon.classList.remove(
+                "fa-xmark"
+            );
+
+            menuIcon.classList.add(
+                "fa-bars"
+            );
+
+
+            /*
+             * Smoothly reverse the
+             * opening animation.
+             */
+
+            mobileMenu.style.opacity = "0";
+
+            mobileMenu.style.transform =
+                "translateY(-18px)";
+
+            mobileMenu.style.maxHeight =
+                "0";
+
+
+            /*
+             * Wait until the 0.45 second
+             * animation has finished before
+             * completely hiding the menu.
+             */
+
+            setTimeout(() => {
+
+                if (!menuOpen) {
+
+                    mobileMenu.style.display =
+                        "none";
+
+                }
+
+            }, 450);
 
         }
 
     });
 
+
     /* ============================
-       SMOOTH SCROLL
+       CLOSE MENU AFTER LINK CLICK
     ============================ */
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    mobileMenu
+        .querySelectorAll("a")
+        .forEach(link => {
 
-        anchor.addEventListener("click", function (e) {
+            link.addEventListener("click", () => {
 
-            const target = document.querySelector(this.getAttribute("href"));
+                menuOpen = false;
 
-            if (!target) return;
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
 
-            e.preventDefault();
+                menuIcon.classList.remove(
+                    "fa-xmark"
+                );
 
-            target.scrollIntoView({
-
-                behavior: "smooth"
+                menuIcon.classList.add(
+                    "fa-bars"
+                );
 
             });
 
         });
 
-    });
+}
+
 
     /* ============================
-       PAGE FADE IN
+       MOBILE NAVIGATION HOVER
     ============================ */
 
-    document.body.style.opacity = "0";
-    document.body.style.transition = "opacity .7s ease";
+    document
+        .querySelectorAll(".mobile-nav-link")
+        .forEach(link => {
 
-    requestAnimationFrame(() => {
+            link.addEventListener(
+                "mouseenter",
+                () => {
 
-        document.body.style.opacity = "1";
+                    link.style.color =
+                        "#C8A96A";
 
-    });
+                    link.style.paddingLeft =
+                        "8px";
+
+                }
+            );
+
+
+            link.addEventListener(
+                "mouseleave",
+                () => {
+
+                    link.style.paddingLeft =
+                        "0";
+
+                }
+            );
+
+        });
+
+
+    /* ============================
+       MOBILE BOOK BUTTON HOVER
+    ============================ */
+
+    const mobileBookButton =
+        document.getElementById(
+            "mobile-book-button"
+        );
+
+
+    if (mobileBookButton) {
+
+        mobileBookButton.addEventListener(
+            "mouseenter",
+            () => {
+
+                mobileBookButton.style.transform =
+                    "translateY(-2px)";
+
+                mobileBookButton.style.backgroundColor =
+                    "#B99550";
+
+            }
+        );
+
+
+        mobileBookButton.addEventListener(
+            "mouseleave",
+            () => {
+
+                mobileBookButton.style.transform =
+                    "translateY(0)";
+
+                mobileBookButton.style.backgroundColor =
+                    "#C8A96A";
+
+            }
+        );
+
+    }
+
+
+    /* ============================
+       ACTIVE NAVIGATION
+    ============================ */
+
+    const currentPage =
+        location.pathname
+            .split("/")
+            .filter(Boolean)
+            .pop() || "";
+
+
+    document
+        .querySelectorAll("nav a")
+        .forEach(link => {
+
+            const href =
+                link.getAttribute("href");
+
+            if (!href) return;
+
+
+            try {
+
+                const linkPage =
+                    new URL(
+                        href,
+                        window.location.origin
+                    )
+                    .pathname
+                    .split("/")
+                    .filter(Boolean)
+                    .pop() || "";
+
+
+                if (linkPage === currentPage) {
+
+                    link.classList.add(
+                        "text-secondary"
+                    );
+
+                    link.style.fontWeight =
+                        "600";
+
+                }
+
+            }
+
+            catch (error) {
+
+                console.log(
+                    "Navigation check skipped."
+                );
+
+            }
+
+        });
+
+
+    /* ============================
+       SMOOTH SCROLL
+    ============================ */
+
+    document
+        .querySelectorAll('a[href^="#"]')
+        .forEach(anchor => {
+
+            anchor.addEventListener(
+                "click",
+                function (e) {
+
+                    const target =
+                        document.querySelector(
+                            this.getAttribute("href")
+                        );
+
+
+                    if (!target) return;
+
+
+                    e.preventDefault();
+
+
+                    target.scrollIntoView({
+
+                        behavior: "smooth"
+
+                    });
+
+                }
+            );
+
+        });
+
 
     /* ============================
        BACK TO TOP BUTTON
     ============================ */
 
-    const topButton = document.createElement("button");
+    const backToTop =
+        document.createElement("button");
 
-    topButton.innerHTML = '<i class="fa-solid fa-chevron-up"></i>';
 
-    topButton.style.position = "fixed";
-    topButton.style.right = "25px";
-    topButton.style.bottom = "25px";
-    topButton.style.width = "55px";
-    topButton.style.height = "55px";
-    topButton.style.borderRadius = "50%";
-    topButton.style.border = "none";
-    topButton.style.background = "#C8A96A";
-    topButton.style.color = "#fff";
-    topButton.style.fontSize = "18px";
-    topButton.style.cursor = "pointer";
-    topButton.style.display = "none";
-    topButton.style.zIndex = "9999";
-    topButton.style.transition = ".3s ease";
+    backToTop.innerHTML =
+        '<i class="fa-solid fa-arrow-up"></i>';
 
-    document.body.appendChild(topButton);
 
-    window.addEventListener("scroll", () => {
+    backToTop.setAttribute(
+        "aria-label",
+        "Back to top"
+    );
 
-        topButton.style.display = window.scrollY > 500 ? "block" : "none";
 
-    });
+    document.body.appendChild(
+        backToTop
+    );
 
-    topButton.addEventListener("click", () => {
 
-        window.scrollTo({
+    /* Small button styling */
 
-            top: 0,
-            behavior: "smooth"
+    backToTop.style.position =
+        "fixed";
 
-        });
+    backToTop.style.right =
+        "18px";
 
-    });
+    backToTop.style.bottom =
+        "18px";
+
+    backToTop.style.width =
+        "34px";
+
+    backToTop.style.height =
+        "34px";
+
+    backToTop.style.borderRadius =
+        "50%";
+
+    backToTop.style.border =
+        "none";
+
+    backToTop.style.backgroundColor =
+        "#C8A96A";
+
+    backToTop.style.color =
+        "#FFFFFF";
+
+    backToTop.style.fontSize =
+        "13px";
+
+    backToTop.style.cursor =
+        "pointer";
+
+    backToTop.style.zIndex =
+        "9999";
+
+    backToTop.style.display =
+        "none";
+
+    backToTop.style.alignItems =
+        "center";
+
+    backToTop.style.justifyContent =
+        "center";
+
+    backToTop.style.boxShadow =
+        "0 3px 10px rgba(0,0,0,0.18)";
+
+    backToTop.style.transition =
+        "opacity 0.3s ease, transform 0.3s ease";
+
+
+    /* Show after scrolling */
+
+    window.addEventListener(
+        "scroll",
+        () => {
+
+            if (window.scrollY > 300) {
+
+                backToTop.style.display =
+                    "flex";
+
+            }
+
+            else {
+
+                backToTop.style.display =
+                    "none";
+
+            }
+
+        }
+    );
+
+
+    /* Smooth scroll to top */
+
+    backToTop.addEventListener(
+        "click",
+        () => {
+
+            window.scrollTo({
+
+                top: 0,
+                behavior: "smooth"
+
+            });
+
+        }
+    );
 
 });
-
