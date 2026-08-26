@@ -14,7 +14,7 @@ Contains the custom WordPress theme developed from the Tailwind CSS
 website prototype for the WordPress implementation of the project.
 
 ## Live Website
-Live WordPress website: 
+Live WordPress website: https://elanwellnessspa.infinityfreeapp.com
 
 ## Technologies Used
 - HTML
