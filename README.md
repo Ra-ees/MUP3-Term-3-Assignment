@@ -15,15 +15,3 @@ website prototype for the WordPress implementation of the project.
 
 ## Live Website
 Live WordPress website: https://elanwellnessspa.infinityfreeapp.com
-
-## Technologies Used
-- HTML
-- Tailwind CSS
-- JavaScript
-- PHP
-- WordPress
-
-## WordPress Plugins
-- Amelia Booking Plugin
-- Yoast SEO
-- WPForms Lite
