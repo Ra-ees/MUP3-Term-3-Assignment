@@ -1,5 +1,3 @@
-# MUP3-Term-3-Assignment
-
 # 🌿 MUP3-Term-3-Assignment
 
 This repository contains the development files for the **Élan Wellness Spa** website project.
@@ -16,4 +14,4 @@ Contains the custom WordPress theme developed from the **Tailwind CSS website pr
 
 ## 🌐 Live Website
 
-**Live WordPress website:** [Élan Wellness Spa](https://elanwellnessspa.infinityfreeapp.com)
+**Live WordPress website:** https://elanwellnessspa.infinityfreeapp.com
