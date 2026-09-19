@@ -41,7 +41,7 @@
 <header
     class="w-full z-50"
     style="
-        position: relative;
+        position: sticky;
         top: 0;
         left: 0;
         width: 100%;
