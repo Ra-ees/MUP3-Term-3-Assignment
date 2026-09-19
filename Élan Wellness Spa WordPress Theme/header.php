@@ -50,7 +50,7 @@
     ">
 
 
-<nav class="max-w-7xl mx-auto flex items-center justify-between px-8 py-5 transition-all duration-500">
+<nav class="max-w-7xl mx-auto flex items-center justify-between px-8 transition-all duration-300" style="height: 78px;">
 
 
 <!-- ========================= -->
