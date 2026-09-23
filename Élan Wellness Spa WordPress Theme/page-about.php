@@ -42,10 +42,12 @@ style="background-image:url('<?php echo esc_url( get_template_directory_uri() . 
 
         <p class="text-white/90 text-base md:text-xl max-w-3xl leading-8 md:leading-9">
 
-            Discover the story behind Élan Wellness Spa and our passion
-            for creating unforgettable wellness experiences through
-            personalised treatments, expert therapists, and a tranquil
-            environment designed for complete relaxation.
+           Discover the story behind Élan Wellness Spa and our passion for creating
+           meaningful wellness experiences that help you slow down, reconnect and
+           restore balance. From personalised treatments and expert therapeutic care
+           to our tranquil surroundings, every element has been thoughtfully created
+           to provide a sense of comfort, relaxation and complete rejuvenation. A 
+           space designed to help you pause, breathe and return to yourself.
 
         </p>
 
@@ -108,8 +110,8 @@ style="background-image:url('<?php echo esc_url( get_template_directory_uri() . 
                 </p>
 
                 <a
-                    href="<?php echo esc_url( home_url( '/booking' ) ); ?>"
-                    class="inline-block bg-secondary text-white px-8 py-4 rounded-full hover:bg-primary transition duration-300">
+                   href="<?php echo esc_url( home_url('/booking/#booking-form') ); ?>"
+                   class="inline-block bg-secondary text-white px-8 py-4 rounded-full hover:bg-primary transition duration-300">
 
                     Book Your Experience
 
@@ -517,7 +519,7 @@ style="background-image:url('<?php echo esc_url( get_template_directory_uri() . 
         </p>
 
         <a
-            href="<?php echo esc_url( home_url( '/booking' ) ); ?>"
+            href="<?php echo esc_url( home_url('/booking/#booking-form') ); ?>"
             class="inline-block bg-secondary hover:bg-primary transition duration-300 text-white px-10 py-5 rounded-full shadow-xl text-lg">
 
             Book Your Appointment
