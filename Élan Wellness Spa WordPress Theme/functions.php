@@ -330,10 +330,11 @@ function elan_enqueue_assets() {
 
 
 	}
+  
 
 
 
-
+  
 	/*
 	|--------------------------------------------------------------------------
 	| Google Fonts
@@ -373,9 +374,71 @@ function elan_enqueue_assets() {
 		'6.7.2'
 
 	);
+  
+  
+      /*
+    |--------------------------------------------------------------------------
+    | Leaflet Map
+    |--------------------------------------------------------------------------
+    | Load Leaflet only on the Contact page.
+    */
 
+    if ( is_page_template( 'contact-page.php' ) || is_page( 'contact' ) ) {
 
+        wp_enqueue_style(
+            'elan-leaflet',
+            'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css',
+            array(),
+            '1.9.4'
+        );
 
+        wp_enqueue_script(
+            'elan-leaflet',
+            'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js',
+            array(),
+            '1.9.4',
+            true
+        );
+
+        wp_add_inline_script(
+            'elan-leaflet',
+            "
+            document.addEventListener('DOMContentLoaded', function () {
+
+                const mapElement = document.getElementById('elan-map');
+
+                if (!mapElement) {
+                    return;
+                }
+
+                const map = L.map('elan-map').setView(
+                    [-34.02136, 18.44446],
+                    15
+                );
+
+                L.tileLayer(
+                    'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+                    {
+                        maxZoom: 19,
+                        attribution:
+                            '&copy; <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\" rel=\"noopener\">OpenStreetMap</a> contributors'
+                    }
+                ).addTo(map);
+
+                const marker = L.marker(
+                    [-34.02136, 18.44446]
+                ).addTo(map);
+
+                marker.bindPopup(
+                    '<strong>Élan Wellness Spa</strong><br>' +
+                    'Constantia, Cape Town'
+                );
+
+            });
+            ",
+            'after'
+        );
+    }
 
 
 
