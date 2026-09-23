@@ -35,9 +35,11 @@ get_header();
 
         <p class="text-white/90 text-base md:text-xl max-w-xl md:max-w-3xl leading-8 md:leading-9">
 
-            Schedule your appointment with our expert therapists and enjoy a
-            personalised wellness experience designed to help you relax,
-            recharge, and restore your wellbeing.
+             Schedule your appointment with our expert therapists and enjoy a
+             personalised wellness experience created around your comfort and
+             wellbeing. Choose from our luxurious treatments, select a convenient
+             date and time, and prepare to unwind in a tranquil environment where
+             thoughtful care, relaxation, and rejuvenation come together.
 
         </p>
 
@@ -82,7 +84,7 @@ get_header();
 <!-- BOOKING FORM -->
 <!-- ========================================= -->
 
-<section class="py-24 bg-[#F9F7F3]">
+<section id="booking-form" class="py-24 bg-[#F9F7F3]">
 
     <div class="max-w-7xl mx-auto px-8">
 
@@ -120,6 +122,8 @@ get_header();
             </div>
 
             <!-- RIGHT COLUMN -->
+
+            <div id="amelia-booking-form" class="scroll-mt-24">
 
                     <?php echo do_shortcode('[ameliastepbooking]'); ?>
 
@@ -344,7 +348,7 @@ $booking_cta_bg = get_theme_mod(
 
         </p>
 
-        <a href="<?php echo esc_url( home_url('/booking') ); ?>"
+        <a href="<?php echo esc_url( home_url('/booking/#booking-form') ); ?>"
            class="inline-block min-w-[320px] bg-secondary hover:bg-primary transition duration-300 text-white px-10 py-5 rounded-full shadow-xl text-center">
 
             <?php echo esc_html( get_theme_mod(
