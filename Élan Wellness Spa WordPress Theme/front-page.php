@@ -50,7 +50,7 @@ get_header();
 
             <div class="flex flex-wrap gap-4 mb-10 md:mb-0">
 
-                <a href="<?php echo esc_url( home_url( '/booking/' ) ); ?>"
+                <a href="<?php echo esc_url( home_url('/booking/#booking-form') ); ?>"
                    class="bg-secondary hover:bg-primary text-white px-10 py-5 rounded-full shadow-xl transition duration-300">
 
                     <?php esc_html_e( 'Book Appointment', 'elan-wellness-spa' ); ?>
@@ -141,7 +141,7 @@ get_header();
 
                     </div>
 
-                    <a href="<?php echo esc_url( home_url( '/booking/' ) ); ?>"
+                    <a href="<?php echo esc_url( home_url('/booking/#booking-form') ); ?>"
                        class="inline-block bg-primary text-white px-6 py-3 rounded-full hover:bg-secondary transition">
 
                         <?php esc_html_e( 'Book Now', 'elan-wellness-spa' ); ?>
@@ -182,7 +182,7 @@ get_header();
 
                     </div>
 
-                    <a href="<?php echo esc_url( home_url( '/booking/' ) ); ?>"
+                    <a href="<?php echo esc_url( home_url('/booking/#booking-form') ); ?>"
                        class="inline-block bg-primary text-white px-6 py-3 rounded-full hover:bg-secondary transition">
 
                         <?php esc_html_e( 'Book Now', 'elan-wellness-spa' ); ?>
@@ -223,7 +223,7 @@ get_header();
 
                     </div>
 
-                    <a href="<?php echo esc_url( home_url( '/booking/' ) ); ?>"
+                    <a href="<?php echo esc_url( home_url('/booking/#booking-form') ); ?>"
                        class="inline-block bg-primary text-white px-6 py-3 rounded-full hover:bg-secondary transition">
 
                         <?php esc_html_e( 'Book Now', 'elan-wellness-spa' ); ?>
@@ -264,7 +264,7 @@ get_header();
 
                     </div>
 
-                    <a href="<?php echo esc_url( home_url( '/booking/' ) ); ?>"
+                    <a href="<?php echo esc_url( home_url('/booking/#booking-form') ); ?>"
                        class="inline-block bg-primary text-white px-6 py-3 rounded-full hover:bg-secondary transition">
 
                         <?php esc_html_e( 'Book Now', 'elan-wellness-spa' ); ?>
@@ -305,7 +305,7 @@ get_header();
 
                     </div>
 
-                    <a href="<?php echo esc_url( home_url( '/booking/' ) ); ?>"
+                    <a href="<?php echo esc_url( home_url('/booking/#booking-form') ); ?>"
                        class="inline-block bg-primary text-white px-6 py-3 rounded-full hover:bg-secondary transition">
 
                         <?php esc_html_e( 'Book Now', 'elan-wellness-spa' ); ?>
@@ -346,7 +346,7 @@ get_header();
 
                     </div>
 
-                    <a href="<?php echo esc_url( home_url( '/booking/' ) ); ?>"
+                    <a href="<?php echo esc_url( home_url('/booking/#booking-form') ); ?>"
                        class="inline-block bg-primary text-white px-6 py-3 rounded-full hover:bg-secondary transition">
 
                         <?php esc_html_e( 'Book Now', 'elan-wellness-spa' ); ?>
@@ -808,7 +808,7 @@ get_header();
 
 
 
-            <a href="<?php echo home_url('/booking/'); ?>"
+            <a href="<?php echo esc_url( home_url('/booking/#booking-form') ); ?>"
 
                class="inline-block bg-secondary text-white px-10 py-4 rounded-full hover:bg-primary transition duration-300">
 
@@ -928,7 +928,7 @@ get_header();
 
 
 
-                    <a href="<?php echo home_url('/booking/'); ?>"
+                    <a href="<?php echo esc_url( home_url('/booking/#booking-form') ); ?>"
 
                        class="inline-block bg-primary text-white px-6 py-3 rounded-full hover:bg-secondary transition">
 
@@ -997,7 +997,7 @@ get_header();
 
 
 
-                    <a href="<?php echo home_url('/booking/'); ?>"
+                    <a href="<?php echo esc_url( home_url('/booking/#booking-form') ); ?>"
 
                        class="inline-block bg-primary text-white px-6 py-3 rounded-full hover:bg-secondary transition">
 
@@ -1068,7 +1068,7 @@ get_header();
 
 
 
-                    <a href="<?php echo home_url('/booking/'); ?>"
+                    <a href="<?php echo esc_url( home_url('/booking/#booking-form') ); ?>"
 
                        class="inline-block bg-primary text-white px-6 py-3 rounded-full hover:bg-secondary transition">
 
