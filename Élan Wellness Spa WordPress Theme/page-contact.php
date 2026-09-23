@@ -56,7 +56,7 @@ $hero_image = get_theme_mod(
             echo wp_kses_post(
                 get_theme_mod(
                     'contact_hero_description',
-                    "Whether you're ready to book a treatment or simply have a question, our friendly team is here to help. Contact us today and begin your journey to relaxation and wellbeing."
+                    "Whether you're ready to book a treatment, have questions about our services, or simply want to learn more about Élan Wellness Spa, our friendly team is here to assist. Get in touch with us to discover more about our treatments, facilities, and personalised wellness experiences, and take the first step towards greater relaxation, balance, and wellbeing."
                 )
             );
             ?>
@@ -170,9 +170,9 @@ $hero_image = get_theme_mod(
 
             <!-- Right Side -->
 
-            <div class="bg-white rounded-3xl shadow-2xl p-10">
+               <div id="contact-form" class="bg-white rounded-3xl shadow-2xl p-10">
 
-                   <?php echo do_shortcode('[wpforms id="1586"]'); ?>
+                   <?php echo do_shortcode('[wpforms id="47"]'); ?>
 
         </div>
 
@@ -292,13 +292,6 @@ $hero_image = get_theme_mod(
 <!-- LOCATION & HOURS -->
 <!-- ========================================= -->
 
-<?php
-$location_image = get_theme_mod(
-    'contact_location_image',
-    get_template_directory_uri() . '/assets/images/location.png'
-);
-?>
-
 <section class="py-24 bg-[#F9F7F3]">
 
     <div class="max-w-7xl mx-auto px-8">
@@ -371,11 +364,12 @@ $location_image = get_theme_mod(
 
                 </h2>
 
-                <div class="overflow-hidden rounded-3xl shadow-2xl">
+                <div class="overflow-hidden rounded-3xl shadow-xl">
 
-                    <img src="<?php echo esc_url( $location_image ); ?>"
-                         alt="Spa Location"
-                         class="w-full h-full object-cover">
+                   <div id="elan-map"
+                        role="application"
+                        aria-label="Interactive map showing the location of Élan Wellness Spa in Constantia, Cape Town">
+                   </div>
 
                 </div>
 
@@ -472,7 +466,7 @@ $cta_image = get_theme_mod(
 
         </p>
 
-        <a href="<?php echo esc_url( home_url('/booking') ); ?>"
+        <a href="<?php echo esc_url( home_url('/booking/#booking-form') ); ?>"
            class="inline-block min-w-[320px] bg-secondary hover:bg-primary transition duration-300 text-white px-10 py-5 rounded-full shadow-xl text-center">
 
             Book Your Visit
