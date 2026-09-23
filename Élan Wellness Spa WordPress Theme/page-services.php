@@ -30,9 +30,11 @@ get_header();
         </h1>
 
         <p class="text-white/90 text-base md:text-xl max-w-xl md:max-w-3xl leading-8 md:leading-9">
-            Discover our carefully curated collection of luxurious spa
-            treatments designed to restore balance, revitalise your body,
-            and leave you feeling completely refreshed.
+            Discover our carefully curated collection of luxurious spa treatments,
+            thoughtfully designed to restore balance, ease tension, and revitalise
+            both body and mind. From soothing massages and rejuvenating facials to
+            indulgent wellness experiences, each treatment is tailored to help you
+            relax deeply, feel refreshed, and leave feeling completely renewed.
         </p>
 
     </div>
@@ -114,7 +116,7 @@ get_header();
 
                     <div class="flex gap-4">
 
-                        <a href="<?php echo esc_url(home_url('/booking')); ?>"
+                        <a href="<?php echo esc_url( home_url('/booking/#booking-form') ); ?>"
                             class="flex-1 text-center bg-secondary text-white py-3 rounded-full hover:bg-primary transition duration-300">
                             Book Now
                         </a>
@@ -167,7 +169,7 @@ get_header();
 
                     <div class="flex gap-4">
 
-                        <a href="<?php echo esc_url(home_url('/booking')); ?>"
+                        <a href="<?php echo esc_url( home_url('/booking/#booking-form') ); ?>"
                             class="flex-1 text-center bg-secondary text-white py-3 rounded-full hover:bg-primary transition duration-300">
                             Book Now
                         </a>
@@ -220,7 +222,7 @@ get_header();
 
                     <div class="flex gap-4">
 
-                        <a href="<?php echo esc_url(home_url('/booking')); ?>"
+                        <a href="<?php echo esc_url( home_url('/booking/#booking-form') ); ?>"
                             class="flex-1 text-center bg-secondary text-white py-3 rounded-full hover:bg-primary transition duration-300">
                             Book Now
                         </a>
@@ -236,7 +238,7 @@ get_header();
 
             </div>
 
-                        <!-- ========================================= -->
+            <!-- ========================================= -->
             <!-- LUXURY FACIAL -->
             <!-- ========================================= -->
 
@@ -272,7 +274,7 @@ get_header();
 
                     <div class="flex gap-4">
 
-                        <a href="<?php echo esc_url(home_url('/booking')); ?>"
+                        <a href="<?php echo esc_url( home_url('/booking/#booking-form') ); ?>"
                             class="flex-1 text-center bg-secondary text-white py-3 rounded-full hover:bg-primary transition duration-300">
                             Book Now
                         </a>
@@ -324,7 +326,7 @@ get_header();
 
                     <div class="flex gap-4">
 
-                        <a href="<?php echo esc_url(home_url('/booking')); ?>"
+                        <a href="<?php echo esc_url( home_url('/booking/#booking-form') ); ?>"
                             class="flex-1 text-center bg-secondary text-white py-3 rounded-full hover:bg-primary transition duration-300">
                             Book Now
                         </a>
@@ -376,7 +378,7 @@ get_header();
 
                     <div class="flex gap-4">
 
-                        <a href="<?php echo esc_url(home_url('/booking')); ?>"
+                        <a href="<?php echo esc_url( home_url('/booking/#booking-form') ); ?>"
                             class="flex-1 text-center bg-secondary text-white py-3 rounded-full hover:bg-primary transition duration-300">
                             Book Now
                         </a>
@@ -464,7 +466,7 @@ get_header();
 
                 </div>
 
-                <a href="<?php echo esc_url(home_url('/booking')); ?>"
+                <a href="<?php echo esc_url( home_url('/booking/#booking-form') ); ?>"
                     class="inline-block bg-secondary hover:bg-primary transition duration-300 text-white px-10 py-5 rounded-full shadow-lg">
 
                     Book This Experience
@@ -699,14 +701,14 @@ get_header();
 
         <div class="flex flex-wrap justify-center gap-5">
 
-            <a href="<?php echo esc_url(home_url('/booking')); ?>"
+            <a href="<?php echo esc_url( home_url('/booking/#booking-form') ); ?>"
                 class="bg-secondary hover:bg-primary transition duration-300 text-white px-10 py-5 rounded-full shadow-xl">
 
                 Book Appointment
 
             </a>
 
-            <a href="<?php echo esc_url(home_url('/contact')); ?>"
+            <a href="<?php echo esc_url( home_url('/contact/#contact-form') ); ?>"
                 class="border-2 border-white text-white hover:bg-white hover:text-primary transition duration-300 px-10 py-5 rounded-full">
 
                 Contact Us
