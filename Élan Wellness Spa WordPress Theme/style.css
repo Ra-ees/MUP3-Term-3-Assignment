@@ -127,7 +127,9 @@ img {
 .amelia-v2-booking button:hover,
 .amelia-v2-booking .am-button:hover{
 
-    background:#B89453 !important;
+    background:#B89453 !important;  
+  
+}  
 
 /* ==========================================================
    Amelia 2.4.5 - Remove gold background from phone selector
@@ -161,4 +163,24 @@ img {
     background:transparent !important;
 }
   
+/* ======================================================
+   ÉLAN WELLNESS SPA
+   Leaflet Interactive Map
+====================================================== */
+
+#elan-map {
+    width: 100%;
+    height: 472px;
+    min-height: 472px;
+}
+
+#elan-map .leaflet-control-zoom a {
+    color: #2E2E2E;
+}  
+
+/* Leaflet attribution spacing */
+
+#elan-map .leaflet-control-attribution {
+    padding: 2px 8px 2px 8px;
+    font-size: 11px;
 }
