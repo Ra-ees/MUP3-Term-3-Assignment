@@ -153,7 +153,7 @@ Contact
 <!-- ========================= -->
 
 
-<a href="<?php echo home_url('/booking'); ?>"
+<a href="<?php echo esc_url( home_url('/booking/#booking-form') ); ?>"
    class="hidden md:inline-block bg-secondary text-white px-6 py-3 rounded-full shadow-soft hover:scale-105 transition-transform duration-300">
 
 Book Now
@@ -330,7 +330,7 @@ Book Now
         <!-- MOBILE BOOK NOW BUTTON -->
 
         <a
-            href="<?php echo home_url('/booking'); ?>"
+            href="<?php echo esc_url( home_url('/booking/#booking-form') ); ?>"
             id="mobile-book-button"
             style="
                 display: inline-block;
