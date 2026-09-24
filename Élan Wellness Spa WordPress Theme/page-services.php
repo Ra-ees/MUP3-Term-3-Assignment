@@ -708,7 +708,7 @@ get_header();
 
             </a>
 
-            <a href="<?php echo esc_url( home_url('/contact/#contact-form') ); ?>"
+            <a href="<?php echo home_url('/contact'); ?>"
                 class="border-2 border-white text-white hover:bg-white hover:text-primary transition duration-300 px-10 py-5 rounded-full">
 
                 Contact Us
