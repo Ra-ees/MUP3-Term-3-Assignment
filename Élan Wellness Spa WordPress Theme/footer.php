@@ -81,7 +81,7 @@
 
                 <li>
 
-                    <a href="<?php echo home_url('/booking'); ?>"
+                    <a href="<?php echo esc_url( home_url('/booking/#booking-form') ); ?>"
                        class="hover:text-secondary transition duration-300">
 
                         Booking
@@ -94,7 +94,7 @@
 
                 <li>
 
-                    <a href="<?php echo home_url('/contact'); ?>"
+                    <a href="<?php echo esc_url( home_url('/contact/#contact-form') ); ?>"
                        class="hover:text-secondary transition duration-300">
 
                         Contact
