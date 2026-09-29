@@ -14,4 +14,4 @@ Contains the custom WordPress theme developed from the **Tailwind CSS website pr
 
 ## 🌐 Live Website
 
-**Live WordPress website:** https://elanwellnessspa.infinityfreeapp.com
+**Live Website Link:** https://elanwellnessspa.infinityfreeapp.com
