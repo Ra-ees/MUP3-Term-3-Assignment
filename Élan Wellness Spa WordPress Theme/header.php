@@ -121,7 +121,7 @@ Services
 
 <li>
 
-<a href="<?php echo home_url('/booking'); ?>"
+<a href="<?php echo esc_url( home_url('/booking/#booking-form') ); ?>"
    class="relative text-white hover:text-secondary transition duration-300"
    style="<?php echo is_page('booking') ? 'color: #C8A96A;' : ''; ?>">
 
@@ -134,7 +134,7 @@ Booking
 
 <li>
 
-<a href="<?php echo home_url('/contact'); ?>"
+<a href="<?php echo esc_url( home_url('/contact/#contact-form') ); ?>"
    class="relative text-white hover:text-secondary transition duration-300"
    style="<?php echo is_page('contact') ? 'color: #C8A96A;' : ''; ?>">
 
@@ -288,7 +288,7 @@ Book Now
         <!-- BOOKING -->
 
         <a
-            href="<?php echo home_url('/booking'); ?>"
+            href="<?php echo esc_url( home_url('/booking/#booking-form') ); ?>"
             class="mobile-nav-link"
             style="
                 display: block;
@@ -309,7 +309,7 @@ Book Now
         <!-- CONTACT -->
 
         <a
-            href="<?php echo home_url('/contact'); ?>"
+            href="<?php echo esc_url( home_url('/contact/#contact-form') ); ?>"
             class="mobile-nav-link"
             style="
                 display: block;
